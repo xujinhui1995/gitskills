@@ -26,3 +26,9 @@
 23. 删除分支:`git branch -d dev`
 24. 查看分支:`git branch`
 25. 查看分支合并图:`git log --graph`
+26. 储存当前工作现场:`git stash`
+27. 查看存储的工作现场列表:`git stash list`
+28. 恢复工作现场:`git stash apply	`
+29. 删除stash:`git stash drop`
+30. 恢复工作现场并删除stash:`git stash pop`
+31. 恢复某一工作现场:`git stash apply stash@{0}`
