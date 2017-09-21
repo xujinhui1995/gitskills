@@ -11,4 +11,6 @@
 8. 查看暂存区和工作区的区别:`git diff`
 9. 查看本地的提交记录:`git log`
 10. 查看历史命令以及操作序列号:`git reflog`
-11. 从暂存区回退到工作区或从版本库回退到暂存区:`git checkout -- README.md`
+11. 舍弃修改,使得工作区与暂存区一致:`git checkout -- README.md`
+12. 舍弃add,使得暂存区与版本库一致:`git reset HEAD README.md`
+13. 1234456
