@@ -14,3 +14,8 @@
 11. 舍弃修改,使得工作区与暂存区一致:`git checkout -- README.md`
 12. 舍弃add,使得暂存区与版本库一致:`git reset HEAD README.md`
 13. 回退到某一版本:`git reset --hard 90f890f`
+14. 删除文件:`git rm README.md`
+15. 关联远程库:`git remote add origin git@github.com:xujinhui1995/gitskills.git`
+16. 第一次推送:`git push -u origin master`
+17. 以后的推送:`git push origin master`
+18. 将远程库克隆到本地:`git clone git@github.com:xujinhui1995/gitskills.git`
