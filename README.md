@@ -32,3 +32,11 @@
 29. 删除stash:`git stash drop`
 30. 恢复工作现场并删除stash:`git stash pop`
 31. 恢复某一工作现场:`git stash apply stash@{0}`
+32. 强制删除分支:`git checkout -D feature-vulcan`
+
+###多人合作模式
+1. 直接提交:`git push origin branch-name`
+2. 推送失败,则更新本地,尝试合并:`git pull`
+3. 无冲突之后,继续推送:`git push origin branch-name`
+4. 在本地创建和远程分支的对应:`git checkout -b branch-name origin/branch-name`
+5. "no tracking information":本地分支和远程分支没有连接关系`git branch --set-upstream dev origin/dev`
