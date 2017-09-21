@@ -19,3 +19,10 @@
 16. 第一次推送:`git push -u origin master`
 17. 以后的推送:`git push origin master`
 18. 将远程库克隆到本地:`git clone git@github.com:xujinhui1995/gitskills.git`
+19. 创建新的分支:`git branch dev`
+20. 转到新的分支:`git checkout dev`
+21. 创建并转到新的分支:`git checkout -b dev`
+22. 将某分支合并到当前分支:`git merge dev`
+23. 删除分支:`git branch -d dev`
+24. 查看分支:`git branch`
+25. 查看分支合并图:`git log --graph`
