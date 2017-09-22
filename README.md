@@ -40,3 +40,17 @@
 3. 无冲突之后,继续推送:`git push origin branch-name`
 4. 在本地创建和远程分支的对应:`git checkout -b branch-name origin/branch-name`
 5. "no tracking information":本地分支和远程分支没有连接关系`git branch --set-upstream dev origin/dev`
+
+###标签
+1. 新建标签,默认为HEAD:`git tag <name>`
+2. 指定标签信息:`git tag -a <tagname> -m "tag information"`
+3. PGP签名标签:`git tag -s <tagname> -m "tag information"`
+4. 查看标签:`git tag`
+5. 将本地标签推送到远程:`git push origin <tagname>`
+6. 推送全部未推送的标签:`git push origin --tags`
+7. 删除本地标签:`git tag -d <tagname>`
+8. 删除远程标签:`git push origin :refs/tags/<tagname>`
+
+##其他
+1. 忽略文件:将文件加入.gitignore文件,可以用*.后缀
+2. 强制添加被忽略文件:`git add -f file.class` 
