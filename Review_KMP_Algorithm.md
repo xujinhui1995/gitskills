@@ -4,6 +4,8 @@ KMP算法全称是Knuth-Morris-Pratt algorithm.是由Donald Knuth, Vaughan Pratt
 ##暴力匹配算法
 在处理字符串匹配问题时,第一个大家普遍能够想到的解决方案就是暴力匹配.具体思想就是字符串s和模式串p从第一个字母开始进行匹配,如果匹配成功,则s和p的索引i,j分别++,并继续循环,直到全部匹配成功或匹配失败.匹配失败后,i=i+1;j重置为0.具体的实现如下:
 
+1.
+	
 	public static int VolienceMatching(String str, String pattern){
 		    int i = 0;
 		    int j = 0;
@@ -30,4 +32,56 @@ KMP算法全称是Knuth-Morris-Pratt algorithm.是由Donald Knuth, Vaughan Pratt
 		    return index;
 		}
 
+2.
+
+	public static int VolienceMatching(String str, String pattern){
+			int i = 0;
+		    int j = 0;
+		    int sLength = str.length();
+		    int pLength = pattern.length();
+		    while(i<sLength && j<pLength){
+		        char sChar = str.charAt(i);
+		        char pChar = pattern.charAt(j);
+		        if(sChar == pChar){
+		            i++;
+		            j++;
+		        }else{
+		            i = i - j + 1;
+		            j = 0;
+		        }
+		    }
+		    if(j == pLength){
+		        return i - j;
+		    }else{
+		        return -1;
+		    }
+
 既然也在学习Python,就用Python再实现一下.
+	
+	class Solution(object):
+	    def VolienceMatching(self,s,p):
+	        i = j = 0
+	        while i < len(s) and j < len(p):
+	            if s[i] == p[j]:
+	                i += 1
+	                j += 1
+	            else:
+	                i = i - j + 1
+	                j = 0
+	        if j == len(p):
+	            return i-j
+	        else:
+	            return -1
+
+这么一点东西折腾了好久,就是因为main方法里面字符串和类名写重复了,一直在报错,却找不出到底是哪里错了,细心细心.
+
+###KMP算法实现
+
+KMP算法的具体实现就是借助了一个next数组来实现的.next数组指明了模式串在匹配失败之后,j数组开始重新进行匹配的位置.
+
+在这里就是借鉴一下Kris老师所列举的例子,字符串S为"BBC ABCDAB ABCDABCDABDE",相应的模式串P为"ABCDABD".
+
+还是画一下暴力匹配算法吧:
+![](https://i.imgur.com/Ce6jIr7.png)
+
+接下来就是具体的实现.
