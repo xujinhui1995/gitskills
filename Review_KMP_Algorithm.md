@@ -84,4 +84,44 @@ KMP算法的具体实现就是借助了一个next数组来实现的.next数组�
 还是画一下暴力匹配算法吧:
 ![](https://i.imgur.com/Ce6jIr7.png)
 
+在写的时候,还是发现了又一个问题,就是在判断对i,j的更改时,j=-1时的操作.在模式串首字符不匹配的时候,j会被设置为-1,下一次比较久出现问题,因为此时我们应该将模式串右移一个,并且将i+1来进行下一次比较,这是就需要我们判断j的值,j=-1时,说明模式串首字母不一致,只能同时"右移",这样的话,就把他和相等结合起来.
+
 接下来就是具体的实现.
+
+	public void KMP_Search(String s, String p){
+	    int i = 0;
+	    int j = 0;
+	    int sLength = s.length();
+	    int pLength = p.length();
+	    while(i<sLength && j<pLength){
+	        if(j == -1 || s.charAt(i) == p.charAt(j)){
+	            i++;
+	            j++
+	        }else{
+	            j = next[j];
+	        }
+	    }
+	    if(j == pLength){
+	        return i - j;
+	    }else{
+	        return -1;
+	    }
+	}
+
+还有python的实现:
+
+	class Solution:
+	    def KMP_Search(self, s, p):
+	        i = j = 0
+	        sLen = len(s)
+	        pLen = len(p)
+	        while i<sLen and j<pLen:
+	        	if j==-1 or s[i]==p[j]:
+	        		i += 1
+	        		j += 1
+	        	else:
+	        		j = next[j]
+	        if j == pLen:
+	        	return i - j
+	        else:
+	        	return -1
