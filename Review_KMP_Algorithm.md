@@ -291,3 +291,36 @@ java:
 
 python:
 
+    def KMP(self,s,p):
+        sLen = len(s)
+        pLen = len(p)
+        i = j = 0
+        next = []
+        self.getNext(p,next)
+        while(i<sLen and j<pLen):
+            if(j==-1 or s[i]==p[j]):
+                i += 1
+                j += 1
+            else:
+                j = next[j]
+        if j==pLen:
+            return i - j
+        else:
+            return -1
+
+    def getNext(self,p,next):
+        leng = len(p)
+        j = 0
+        next.append(-1)
+        k = -1
+        while j < leng-1:
+            if k==-1 or p[j]==p[k]:
+                k += 1
+                j += 1
+                if p[j] != p[k]:
+                    next.append(k)
+                else:
+                    next.append(next[k])
+            else:
+                k = next[k]
+
