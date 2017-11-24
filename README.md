@@ -1,5 +1,5 @@
 # gitskills
-##常用Git命令
+## 常用Git命令
 
 1. 设置全局的用户名:`git config --global user.name "xujinhui1995"`
 2. 设置全局的邮箱:`git config --global user.email "xujinhui1995@gmail.com"`
@@ -34,14 +34,14 @@
 31. 恢复某一工作现场:`git stash apply stash@{0}`
 32. 强制删除分支:`git checkout -D feature-vulcan`
 
-###多人合作模式
+### 多人合作模式
 1. 直接提交:`git push origin branch-name`
 2. 推送失败,则更新本地,尝试合并:`git pull`
 3. 无冲突之后,继续推送:`git push origin branch-name`
 4. 在本地创建和远程分支的对应:`git checkout -b branch-name origin/branch-name`
 5. "no tracking information":本地分支和远程分支没有连接关系`git branch --set-upstream dev origin/dev`
 
-###标签
+### 标签
 1. 新建标签,默认为HEAD:`git tag <name>`
 2. 指定标签信息:`git tag -a <tagname> -m "tag information"`
 3. PGP签名标签:`git tag -s <tagname> -m "tag information"`
@@ -51,6 +51,6 @@
 7. 删除本地标签:`git tag -d <tagname>`
 8. 删除远程标签:`git push origin :refs/tags/<tagname>`
 
-##其他
+## 其他
 1. 忽略文件:将文件加入.gitignore文件,可以用*.后缀
 2. 强制添加被忽略文件:`git add -f file.class` 
