@@ -1,4 +1,4 @@
-##Sunday
+## Sunday
 
 Sunday算法是Daniel M.Sunday于1990年提出的字符串模式匹配.其效率在匹配随机的字符串时比其他匹配算法还要更快.Sunday算法的实现比KMP,BM实现更加容易.
 

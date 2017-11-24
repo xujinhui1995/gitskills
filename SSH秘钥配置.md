@@ -1,7 +1,7 @@
-#SSH秘钥配置
-##起因
+# SSH秘钥配置
+## 起因
 因为一次意外,进行了腾讯的软件搬家和更新了体验版的激进的系统,导致了很多软件不能用,并且,电脑也没有响应的音频驱动.所以就重装了系统.知道今天才想起来要向git上写一点东西,结果出现了SSH秘钥的问题.于是在网上搜索了一下解决方案.
-##解决方案
+## 解决方案
 1. 一般来说SSH Key在重装系统之后就没有了,所以直接生成一个新的SSH
 		
 		$ssh-keygen -t rsa -C "your email"
@@ -17,4 +17,4 @@
 		git config --global user.name "username"
 		git config --global user.email "your email"
 
-###大功告成
+### 大功告成
