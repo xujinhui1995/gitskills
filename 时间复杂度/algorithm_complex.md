@@ -87,10 +87,37 @@
 	        aux[k] = arr[k];
 	    }
 	    for(int k=low; k<=high; k++){
-	        if(i>middle) a[k] = aux[j++];
-	        else if(j>high) a[k] = aux[i++];
-	        else if(less(aux[i],aux[j])) a[k] = aux[i++];
-	        else a[k] = aux[j++];
+	        if(i>middle) arr[k] = aux[j++];
+	        else if(j>high) arr[k] = aux[i++];
+	        else if(less(aux[i],aux[j])) arr[k] = aux[i++];
+	        else arr[k] = aux[j++];
 	    }
 	}
 
+python:
+
+	def mergeSort(self,lists):
+		if len(lists)<=1:
+			return lists
+		middle = len(lists)//2
+		left = mergeSort(lists[:midlle])
+		right = mergeSort(lists[middle:])
+		merge(left,right)
+	
+	def merge(self,left, right):
+		r,l = 0,0
+		result = []
+		while l<len(left) and r<len(right):
+			if left[l]<right[r]:
+				result.append(left[l])
+				l += 1
+			else:
+				result.append(right[r])
+				r += 1
+		result += left[l:]
+		result += right[r:]
+		return result
+
+every language has its special characters
+
+指数级别的则是在广度优先遍历的前提之下进行最长路径的搜索.
