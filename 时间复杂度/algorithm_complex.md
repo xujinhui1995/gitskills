@@ -57,7 +57,7 @@
 		low = 0
 		high = len(srcArray) - 1
 		while low<=high and low<len(srcArray) and high<len(srcArray):
-			middle = (low+high)//2
+			middle = low + (high-low)//2
 			if des == srcArray[middle]:
 				return middle
 			elif des < srcArray[middle]:
